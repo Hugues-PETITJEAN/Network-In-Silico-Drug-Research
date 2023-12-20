@@ -1,0 +1,55 @@
+Spiking Neural Networks (SNNs) in deep learning represent a more biologically accurate model of how real neural networks in the brain work, compared to traditional artificial neural networks (ANNs). Here's a basic overview:
+
+1. **Biological Inspiration**: SNNs are inspired by the way neurons in the human brain process and transmit information. Neurons in SNNs communicate by sending discrete spikes (or pulses) of information, mimicking the electrical impulses observed in biological neurons.
+
+2. **Time-Dependent Processing**: Unlike ANNs where the output is a continuous function of the input, SNNs incorporate the element of time in their operation. Each neuron in an SNN operates over time and sends out spikes at specific time intervals.
+
+3. **Energy Efficiency**: SNNs are often touted for their energy efficiency. This is because they only process information when a neuron fires, unlike ANNs which are continuously processing.
+
+4. **Learning and Training**: Training SNNs can be more complex than training traditional ANNs. They often use learning rules derived from neuroscience, such as Spike-Timing-Dependent Plasticity (STDP), which adjusts the synaptic weights based on the timing of spikes.
+
+5. **Applications**: SNNs are considered promising for tasks that involve temporal data or require high energy efficiency, such as real-time processing on mobile devices, autonomous robotics, and brain-computer interfaces.
+
+
+
+6. **Challenges**: Despite their advantages, SNNs face challenges in terms of training difficulty and a lack of standardized frameworks and tools, as compared to the well-established ecosystems for ANNs.
+
+SNNs represent an exciting frontier in deep learning, blending insights from neuroscience with advanced computational techniques. They offer a potential path towards more efficient and biologically realistic forms of artificial intelligence.
+
+librairy to use: https://www.nengo.ai/
+in test:
+import nengo
+import numpy as np
+
+# Example data: Lists of numbers (you would have your own dataset)
+# In a real scenario, you need to encode these lists into spike trains
+data = [
+    [1, 2, 3, 4],  # Class 1
+    [7, 8, 9, 10]  # Class 2
+    # Add more data here
+]
+
+# Convert data to spike trains (this is a placeholder, real encoding is needed)
+encoded_data = np.array(data)  # Placeholder for encoded data
+
+# Define the SNN model
+model = nengo.Network()
+with model:
+    # Input layer
+    input_layer = nengo.Node(encoded_data)
+
+    # Spiking neurons layer
+    neuron_layer = nengo.Ensemble(n_neurons=50, dimensions=4)
+
+    # Connect input to neurons
+    nengo.Connection(input_layer, neuron_layer)
+
+    # Readout layer for classification (you'll need to define how to interpret the output)
+    readout = nengo.Node(size_in=2)
+    nengo.Connection(neuron_layer, readout)
+
+# Simulate the model
+with nengo.Simulator(model) as sim:
+    sim.run(1.0)  # Run for 1 second
+
+# Process the output from 'readout' for classification
