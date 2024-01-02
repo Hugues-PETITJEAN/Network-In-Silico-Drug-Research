@@ -1,4 +1,5 @@
 What is NetworkPharmacology?
+
 Graph theory plays a crucial role in molecular pharmacology network analysis:
 
 Basic Concept of Graph Theory: Graph theory is a field of mathematics focused on studying graphs, which are mathematical structures used to model pairwise relations between objects. A graph is composed of nodes (or vertices) and edges (or links) connecting them. In pharmacology network analysis, these nodes and edges represent various biological entities and their interactions, respectively.
@@ -13,7 +14,7 @@ Metabolic Networks: Depict the biochemical pathways and interactions between met
 Drug-Target Networks: Connect drugs with their target molecules in the body.
 Drug-Target Networks: Connect drugs with their target molecules in the body. Graph Theoretical Analysis:
 
-Centrality Measures*: Used to identify key nodes in the network. For example, a node with a high degree centrality (many connections) might be a crucial protein in a PPI network.
+Centrality Measures*: Used to identify key nodes in the network. For example, a node with a high degree of centrality (many connections) might be a crucial protein in a PPI network.
 Path Analysis: Finding the shortest paths or identifying important pathways that can indicate how different proteins interact or how signals are transmitted in a cell.
 Network Topology: Studying the structure of the network, such as whether it forms clusters, which can reveal insights about the organization and function of the biological system.
 Importance in Pharmacology:
